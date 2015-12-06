@@ -8,6 +8,7 @@ while true
   puts '1.Add User'
   puts '2.Seach User'
   puts '3.Delete User'
+  puts '4.Send Email'
   puts 'Option: '
   op = gets.to_i
   begin
@@ -66,7 +67,10 @@ while true
           if data=="Enter User Name: "
             info  = gets.chomp
             s.send(info,0)
-          elsif
+          elsif data == "Enter Email Recipient: "
+            info  = gets.chomp
+            s.send(info,0)
+           else
           op = - 1
             break
           end

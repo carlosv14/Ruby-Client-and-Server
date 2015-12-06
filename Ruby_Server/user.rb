@@ -25,4 +25,8 @@ class User
   def self.emailParse(u)
     return "<p>User name: " + u.instance_variable_get("@username").to_s + "</p>" + "<p> Name: " + u.instance_variable_get("@name").to_s + "</p>" +"<p>Email: " + u.instance_variable_get("@email").to_s + "</p>" +"<p>ID: " + u.instance_variable_get("@id").to_s + "</p>" +"<p>Fecha Nacimiento: " + u.instance_variable_get("@f_nac").to_s + "</p>" + "<p>Foto: " + u.instance_variable_get("@foto").to_s+"</p>"
   end
+
+  def self.imgSource(u)
+    return u.instance_variable_get("@foto").to_s
+  end
 end

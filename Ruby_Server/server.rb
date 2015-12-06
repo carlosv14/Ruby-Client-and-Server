@@ -119,9 +119,12 @@ loop {
     when 4
       client.puts "Enter User Name: "
       searchuser = client.recv(1024).to_s.chomp
+      client.puts "Enter Email Recipient: "
+      r = client.recv(1024).to_s.chomp
       u = searchUser(users,searchuser)
+
       if !u.nil?
-        send_complex_message(User.emailParse(u),"C:\\Users\\Carlos Varela\\Pictures\\file.jpg","cvarela1496@gmail.com")
+        send_complex_message(User.emailParse(u),User.imgSource(u),r)
         client.puts "Success"
         json_m.userToJson(users)
       else
